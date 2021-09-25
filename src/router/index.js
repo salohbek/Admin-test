@@ -1,20 +1,47 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import home from '../components/home.vue'
+import emailInbox from '../components/email-inbox.vue'
+import emailCompose from '../components/email-compose.vue'
+import emailRead from '../components/email-read.vue'
+import calendar from '../components/calendar.vue'
+import tablesDatatable from '../components/tables-datatable.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
-    component: Home
+    component: home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: '/',
+    redirect: "/home"
+  },
+  {
+    path: '/email-inbox',
+    name: 'email-inbox',
+    component: emailInbox
+  },
+  {
+    path: '/email-compose',
+    name: 'email-compose',
+    component: emailCompose
+  },
+  {
+    path: '/email-read',
+    name: 'email-read',
+    component: emailRead
+  },
+  {
+    path: '/calendar',
+    name: 'calendar',
+    component: calendar
+  },
+  {
+    path: '/tables-datatable',
+    name: 'tablesDatatable',
+    component: tablesDatatable
+  },
+ 
 ]
 
 const router = createRouter({
